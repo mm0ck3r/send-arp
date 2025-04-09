@@ -49,8 +49,8 @@ int send_packet_arp(Mac dmac, Mac smac, Mac tmac, Ip sip, Ip tip, bool isRequest
 
     packet.arp_.hrd_ = htons(ArpHdr::ETHER);
     packet.arp_.pro_ = htons(EthHdr::Ip4);
-    packet.arp_.hln_ = Mac::SIZE;
-    packet.arp_.pln_ =  Ip::SIZE;
+    packet.arp_.hln_ = Mac::Size;
+    packet.arp_.pln_ =  Ip::Size;
 	if(isRequest) packet.arp_.op_ = htons(ArpHdr::Request);
 	else packet.arp_.op_ = htons(ArpHdr::Reply);
     packet.arp_.smac_ = smac;
